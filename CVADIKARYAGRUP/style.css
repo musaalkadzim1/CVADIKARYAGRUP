@@ -1,0 +1,182 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #e6f2ff;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.logo img {
+  max-width: 100px; /* Ukuran logo */
+  height: auto;
+}
+
+h1 {
+  font-size: 1.5em;
+  color: #333;
+}
+
+p {
+  font-size: 1em;
+  color: #666;
+  text-align: left;
+}
+
+.form-label {
+  font-size: 10px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.form-control {
+  font-size: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.status-box {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: left;
+}
+
+.status-box h3 {
+  margin-bottom: 15px;
+  font-size: 1.2em;
+  color: #333;
+}
+/* Timeline Parent */
+.timeline {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+/* Timeline Item */
+.timeline li {
+  position: relative;
+  padding: 10px 0;
+  padding-left: 20px; /* Memberi jarak pada teks */
+  display: flex;
+  align-items: center; /* Menjaga elemen sejajar */
+}
+
+/* Timeline Line */
+.timeline li:before {
+  content: "";
+  position: absolute;
+  left: 110px; /* Mengatur posisi garis di sebelah kanan tanggal */
+  top: 0; /* Memulai garis dari atas elemen */
+  bottom: 0;
+  width: 2px;
+  border-left: 2px dashed #ddd; /* Membuat garis putus-putus */
+  z-index: 1;
+}
+
+/* Timeline Dot */
+.timeline li:after {
+  content: "";
+  position: absolute;
+  left: 105px; /* Menempatkan titik pada garis */
+  top: 50%; /* Menempatkan titik di tengah secara vertikal */
+  transform: translateY(-50%); /* Untuk memastikan titik berada di tengah */
+  width: 12px;
+  height: 12px;
+  background-color: #6c757d; /* Warna abu-abu tua */
+  border: 2px solid #adb5bd; /* Border abu-abu muda */
+  border-radius: 50%;
+  z-index: 2;
+}
+
+/* Icon Green untuk status selesai */
+.timeline .icon.green {
+  background-color: #209b3d; /* Warna hijau tua */
+  position: absolute;
+  left: 105px; /* Sama dengan posisi titik */
+  top: 50%; /* Menempatkan titik di tengah secara vertikal */
+  transform: translateY(-50%); /* Untuk memastikan titik berada di tengah */
+  width: 12px;
+  height: 12px;
+  border: 2px solid #89da95; /* Border hijau muda */
+  border-radius: 50%;
+  z-index: 3;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  /* Sesuaikan ukuran kontainer */
+  .container {
+    width: 95%; /* Sesuaikan lebar kontainer di layar kecil */
+    padding: 15px; /* Sesuaikan padding */
+  }
+
+  /* Sesuaikan ukuran font pada elemen heading */
+  h1 {
+    font-size: 1.4em; /* Sedikit lebih kecil dari ukuran desktop */
+    margin-bottom: 10px; /* Tambah margin untuk spasi */
+  }
+
+  /* Sesuaikan ukuran font pada paragraf */
+  p {
+    font-size: 1em; /* Ukuran font tetap jelas */
+    text-align: left; /* Pastikan teks tetap rata kiri */
+    margin-bottom: 15px; /* Tambah margin bawah */
+  }
+
+  /* Sesuaikan gaya status box */
+  .status-box {
+    padding: 5px; /* Sedikit kurang padding di layar kecil */
+  }
+
+  .status-box h3 {
+    font-size: 1.1em; /* Kurangi sedikit ukuran font */
+    margin-bottom: 10px; /* Tambah sedikit margin bawah */
+  }
+
+  /* Adjust timeline for small screens */
+  .timeline li {
+    padding: 8px 0; /* Kurangi sedikit padding vertikal */
+  }
+
+  .timeline li:before {
+    left: 88px; /* Sesuaikan posisi garis */
+  }
+
+  .timeline li:after,
+  .timeline .icon.green {
+    left: 83px; /* Sesuaikan posisi titik dan ikon hijau */
+    width: 11px; /* Sesuaikan ukuran titik */
+    height: 10px;
+  }
+
+  .timeline li .date {
+    min-width: 65px; /* Kurangi lebar minimum untuk tanggal */
+    font-size: 12px; /* Kurangi ukuran font pada tanggal */
+    margin-right: 10px; /* Kurangi margin kanan */
+  }
+
+  .timeline li .status {
+    font-size: 14px; /* Sesuaikan ukuran font pada status */
+  }
+
+  .timeline li .detail {
+    font-size: 12px; /* Sesuaikan ukuran font pada detail */
+    margin-left: 5px; /* Sesuaikan margin kiri */
+  }
+}
